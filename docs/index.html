@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="renderer" content="webkit|ie-stand">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  <title>结构图</title>
+  <style>
+    * {padding: 0;margin: 0;}
+    body{ font-size: 16px ;background: #fff;padding: 20px;color: #4b565a;}
+    .page-header{padding: 5rem 6rem;margin: -20px -20px 30px; color: #fff; text-align: center; background-color: #159957; background-image: linear-gradient(120deg, #155799, #159957);}
+    .page-header .page-h1{font-size: 32px;margin-bottom: 20px;}
+    .page-header a{color: #fffb54; }
+    .page-header-btn,a.page-header-btn{display: inline-block;  margin-bottom: 1rem;  color: rgba(255,255,255,0.7);  background-color: rgba(255,255,255,0.08);  border-color: rgba(255,255,255,0.2);  border-style: solid;  border-width: 1px;  border-radius: 0.3rem;  transition: color 0.2s, background-color 0.2s, border-color 0.2s;color: rgba(255,255,255,0.8);  text-decoration: none;  background-color: rgba(255,255,255,0.2);  border-color: rgba(255,255,255,0.3); padding: 0.75rem 1rem;color: #ffffff;}
+    .page-header-btn:hover,a.page-header-btn:hover{  background-color: rgba(255,255,255,0.3);  }
+    .page-main{padding: 0 20px;margin: auto;}
+    .page-main-1340{padding: 0 20px;margin: auto;width: 1340px;}
+    .page-h1{font-size:30px;padding: 10px 0;margin-top: 15px;}
+    .page-h2{font-size:26px;padding: 7px 0;margin: 30px 0 10px;color: #159957;font-family: "黑体" ;border-bottom: 2px solid #abdcc3;position: relative;}
+    .page-h2:after{content: ' ';display: block;position: absolute;bottom: 0;left: 0;right: 0;border-bottom: 1px solid #4cb580;}
+    .page-h3{font-size:16px;padding: 5px 0;margin-top: 15px;color: #159957;}
+    .page-h4{font-size:16px;padding: 0 0;margin-top: 15px;color: #1f4c5f;}
+    .page-p{line-height: 1.8;margin-bottom: 14px;}
+    input,select,button{height: 36px;line-height: 22px;padding: 5px 7px;border: 1px solid #bbb;box-sizing: border-box;vertical-align: middle;}
+    .page-pre{display: block; padding: 0.8rem;   margin-top: 0;   margin-bottom: 1rem;   font: 1rem Consolas, "Liberation Mono", Menlo, Courier, monospace;   font-size: 14px;   line-height: 1.4;   color: #567482;   word-wrap: normal;   background-color: #f3f6fa;   border: solid 1px #dce6f0;   border-radius: 0.3rem;}
+    .page-table{table-layout: auto;border-collapse: collapse;margin-top: 10px;}
+    .page-table td,.page-table th{border: 1px solid #bfd6c8;  padding:  7px;  background: #fafffc; color: #627082;font-size: 14px}
+    hr{    padding-top: 2rem;  border: none;  margin-top: 2rem;  border-top: solid 1px #ddd;}
+    .page-p>b,.page-p>div>b,.page-p>span>b,.page-table b{color: #00b6b6;}
+  </style>
+  <link rel="stylesheet" type="text/css" href="anim-galaxy.css">
+</head>
+
+<body>
+  <header class="page-header">
+    <h1 class="page-h1">星空动画 - anim-galaxy</h1>
+    <p class="page-p">基于canvas/css/img实现的一个星空动画。</p>
+    <a class="page-header-btn" href="https://github.com/zhangzicao/anim-galaxy" class="btn">View on GitHub</a>
+  </header>
+  <main >
+
+    <div class="canvas-container"  style="width: 1200px;height: 700px;position: relative;overflow: hidden;margin: 20px auto;">
+      <canvas class="canvas-galaxy" id="galaxyCanvas" width="1200px" height="900px"></canvas>
+      <div class="planet-wrap">
+        <div class="planet planet-2"></div>
+        <div class="planet planet-3"></div>
+        <div class="planet planet-8"></div>
+        <div class="planet planet-9"></div>
+        <div class="planet planet-10"></div>
+        <div class="planet planet-11"></div>
+        <div class="planet planet-12"></div>
+        <div class="planet planet-13"></div>
+        <div class="planet planet-14"></div>
+        <div class="planet planet-15"></div>
+        <div class="planet planet-16"></div>
+      </div>
+      <canvas class="canvas-milky-way" id="galaxyMilkyWay" width="1200px" height="900px"></canvas>
+      <div class="canvas-constellation-wrap">
+        <canvas class="canvas-constellation" id="constellationCanvas" width="180" height="230"></canvas>
+      </div>
+      <div class="canvas-nebula-wrap">
+        <div class="canvas-nebula-img"></div>
+        <canvas class="canvas-nebula" id="nebulaCanvas" width="254" height="254"></canvas>
+      </div>
+      <canvas class="canvas-meteor" id="meteorCanvas"></canvas>
+    </div>
+
+  </main>
+
+  <script type="text/javascript" src="anim-galaxy.js"></script>
+  <script type="text/javascript">
+      renderGalaxy(document.getElementById('galaxyCanvas')) // 星空背景
+      renderMilkyWay(document.getElementById('galaxyMilkyWay')) // 星河
+      renderConstellation(document.getElementById('constellationCanvas')) //星座
+      nebulaAnim(document.getElementById('nebulaCanvas')) //黑洞
+  </script>
+</body>
+
+</html>
